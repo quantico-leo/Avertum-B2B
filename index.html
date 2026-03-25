@@ -38,8 +38,8 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-brand { display: flex; align-items: center; gap: 14px; }
-    .nav-brand img { height: 36px; }
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none;}
+    .nav-brand img { height: 36px; border-radius: 50%; border: 1px solid var(--gold); }
     .nav-brand span {
       font-family: 'Playfair Display', serif;
       font-size: 18px; color: var(--gold); letter-spacing: 1px;
@@ -76,34 +76,26 @@
       overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background:
         radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
         radial-gradient(ellipse 40% 30% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
     }
-    .hero-inner { position: relative; max-width: 860px; }
+    .hero-inner { position: relative; max-width: 860px; z-index: 10;}
     .hero-eyebrow {
-      display: inline-block;
-      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
       color: var(--gold); margin-bottom: 28px;
       padding: 6px 18px; border: 1px solid var(--border); border-radius: 2px;
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.4rem, 5.5vw, 4rem);
-      line-height: 1.18;
-      color: #fff;
-      margin-bottom: 18px;
+      line-height: 1.18; color: #fff; margin-bottom: 18px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--gold);
-    }
+    .hero h1 em { font-style: normal; color: var(--gold); }
     .hero-sub {
-      font-size: 1.15rem; color: var(--muted);
-      max-width: 640px; margin: 0 auto 40px;
-      font-weight: 300;
+      font-size: 1.15rem; color: var(--text);
+      max-width: 700px; margin: 0 auto 40px; font-weight: 300; line-height: 1.8;
     }
     .hero-founders {
       display: flex; align-items: center; justify-content: center;
@@ -133,20 +125,7 @@
       transition: all 0.2s; display: inline-block;
     }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-secondary {
-      background: transparent; color: var(--text);
-      padding: 16px 36px; border-radius: 3px;
-      border: 1px solid var(--border);
-      font-weight: 500; font-size: 13px; text-transform: uppercase;
-      letter-spacing: 1px; text-decoration: none;
-      transition: all 0.2s; display: inline-block;
-    }
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-disclaimer {
-      margin-top: 20px; font-size: 11px; color: var(--muted);
-      letter-spacing: 0.3px;
-    }
-
+    
     /* ── THREAT BAR ── */
     .threat-bar {
       background: rgba(201,168,76,0.08);
@@ -168,79 +147,14 @@
     .container { max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px;
+      color: var(--gold); margin-bottom: 16px; display: block; text-align: center;
     }
     .section-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', serif; text-align: center;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       color: #fff; margin-bottom: 16px; line-height: 1.25;
     }
-    .section-sub { font-size: 1rem; color: var(--muted); max-width: 580px; }
-    .divider { width: 48px; height: 2px; background: var(--gold); margin: 28px 0; }
-
-    /* ── THREAT GRID ── */
-    .threat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2px; margin-top: 60px;
-      border: 1px solid var(--border);
-    }
-    .threat-card {
-      background: var(--dark2);
-      padding: 40px 32px;
-      border-right: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .threat-card:last-child { border-right: none; }
-    .threat-card:hover { background: var(--dark3); }
-    .threat-icon {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; margin-bottom: 24px;
-    }
-    .threat-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem; color: #fff; margin-bottom: 12px;
-    }
-    .threat-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
-    .threat-impact {
-      margin-top: 16px; padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 11px; color: var(--gold);
-      text-transform: uppercase; letter-spacing: 1px;
-    }
-
-    /* ── PROBLEM SCENARIOS ── */
-    .scenarios { background: var(--dark2); }
-    .scenario-list { margin-top: 56px; display: flex; flex-direction: column; gap: 2px; }
-    .scenario {
-      display: grid; grid-template-columns: 60px 1fr auto;
-      align-items: start; gap: 32px;
-      padding: 36px 40px;
-      background: var(--dark);
-      border: 1px solid var(--border);
-      transition: border-color 0.2s;
-      cursor: default;
-    }
-    .scenario:hover { border-color: var(--gold); }
-    .scenario-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem; color: var(--gold); opacity: 0.3;
-      line-height: 1;
-    }
-    .scenario-body h4 {
-      font-size: 1.05rem; font-weight: 600; color: #fff;
-      margin-bottom: 8px;
-    }
-    .scenario-body p { font-size: 0.9rem; color: var(--muted); }
-    .scenario-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag {
-      font-size: 10px; padding: 4px 10px;
-      border: 1px solid var(--border); border-radius: 2px;
-      color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px;
-      white-space: nowrap;
-    }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 600px; margin: 0 auto; text-align: center; }
 
     /* ── REGULATORY BREAKDOWN ── */
     .reg-grid {
@@ -250,39 +164,217 @@
     .reg-card {
       background: var(--dark2); border: 1px solid var(--border);
       border-radius: 2px; overflow: hidden;
+      transition: border-color 0.3s;
     }
+    .reg-card:hover { border-color: var(--gold); }
     .reg-header {
-      background: rgba(201,168,76,0.08);
-      padding: 24px 28px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 16px;
+      background: rgba(201,168,76,0.08); padding: 24px 28px;
+      border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px;
     }
     .reg-badge {
-      background: var(--gold); color: #000;
-      font-size: 11px; font-weight: 700; padding: 4px 10px;
-      border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;
+      background: var(--gold); color: #000; font-size: 11px; font-weight: 700; 
+      padding: 4px 10px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;
     }
     .reg-header h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; }
     .reg-plain {
-      padding: 8px 28px 0;
-      font-size: 0.88rem; color: var(--gold);
-      font-style: italic;
+      padding: 16px 28px 0; font-size: 0.95rem; color: var(--gold); font-style: italic; line-height: 1.5;
     }
     .reg-impacts { padding: 20px 28px 28px; }
     .reg-impact {
-      display: flex; gap: 14px; align-items: flex-start;
-      margin-bottom: 16px;
+      display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px;
     }
     .reg-impact:last-child { margin-bottom: 0; }
+    
+    /* THE GLORIOUS LABELS */
     .impact-label {
       font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
-      color: #000; background: var(--gold);
-      padding: 2px 8px; border-radius: 2px;
+      color: #fff; padding: 4px 8px; border-radius: 2px;
       white-space: nowrap; margin-top: 2px; font-weight: 700;
-      min-width: 80px; text-align: center;
+      min-width: 65px; text-align: center;
     }
-    .impact-label.tech { background: #2A6496; }
-    .impact-label.eco { background: #C0392B; }
-    .impact-label.legal { background: #8E44AD; }
-    .impact-label.rep { background: #27AE60; }
-    .reg-impact p { font-size: 0.88rem; color: var(--
+    .impact-label.tech { background: #2A6496; }   /* Blue */
+    .impact-label.eco { background: #C0392B; }    /* Red */
+    .impact-label.legal { background: #8E44AD; }  /* Purple */
+    .impact-label.rep { background: #27AE60; }    /* Green */
+    
+    .reg-impact p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin: 0; }
+    .reg-impact strong { color: var(--text); font-weight: 600; }
+
+    /* ── PRICING CARDS ── */
+    .pricing-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px; margin-top: 50px;
+    }
+    .price-card {
+        background: var(--dark2); border: 1px solid var(--border);
+        padding: 40px; position: relative; transition: all 0.3s;
+    }
+    .price-card.premium {
+        border-color: var(--gold); background: rgba(201,168,76,0.03);
+    }
+    .price-card.premium::before {
+        content: "REKOMMENDERAS FÖR LEDNINGSGRUPPER"; position: absolute; top: -12px; left: 50%;
+        transform: translateX(-50%); background: var(--gold); color: #000;
+        font-size: 0.7rem; font-weight: 700; padding: 4px 12px; letter-spacing: 1px;
+    }
+    .price-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
+    .price { color: var(--gold); font-size: 1.5rem; font-weight: 700; margin-bottom: 25px; display: block; }
+    .price-card ul { list-style: none; margin-bottom: 30px; }
+    .price-card li { margin-bottom: 12px; color: var(--muted); padding-left: 25px; position: relative; font-size: 0.95rem; }
+    .price-card li::before { content: "✓"; color: var(--gold); position: absolute; left: 0; font-weight: bold; }
+
+    @media (max-width: 768px) {
+        nav { padding: 15px 20px; }
+        .nav-links { display: none; }
+        .hero { padding-top: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://www.avertum.se" class="nav-brand">
+      <img src="Logo.png" alt="Avertum Logo">
+      <span>AVERTUM GROUP</span>
+    </a>
+    <div class="nav-links">
+      <a href="#intelligence">Intelligence</a>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#advisory">Advisory</a>
+    </div>
+    <div class="nav-lang">
+      <a href="#" class="active">SV</a>
+      <a href="en.html">EN</a>
+      <a href="#assessment" class="nav-cta">Riskbedömning</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Strategic Intelligence & Claims Advocacy</span>
+      <h1>Din styrelse är oskyddad. <em>Vet ni om det?</em></h1>
+      <p class="hero-sub">
+        Vi är en operativ Intelligence Firm i skärningspunkten mellan Fraud Prevention, Cybersec och LegalTech. Vi säkrar er VD:s rygg innan revisionen, stoppar finansiella blödningar och agerar torped mot försäkringsbolag som vägrar betala.
+      </p>
+      
+      <div class="hero-founders">
+        <div class="founder-badge">
+          <div class="founder-avatar">
+            <img src="Leo.jpg" alt="Leo Celija">
+          </div>
+          <div class="founder-info">
+            <div class="founder-name">Leo Celija</div>
+            <div class="founder-title">Founder & CEO</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#assessment" class="btn-primary">Inled Riskbedömning</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="threat-bar">
+    <div class="threat-item"><div class="threat-dot"></div> Shadow AI Leaks</div>
+    <div class="threat-item"><div class="threat-dot"></div> Digital Fraud & Tracing</div>
+    <div class="threat-item"><div class="threat-dot"></div> Executive Liability</div>
+    <div class="threat-item"><div class="threat-dot"></div> Insurance Claim Denials</div>
+  </div>
+
+  <section id="frameworks" class="container">
+    <span class="section-label">Den bistra sanningen</span>
+    <h2 class="section-title">Lagstiftningen hotar bolagets överlevnad</h2>
+    <p class="section-sub">Det handlar inte längre om IT-policys. Det handlar om fängelse, konkurs och nekade försäkringsersättningar. Här är vad direktiven egentligen betyder för er styrelse.</p>
+
+    <div class="reg-grid">
+      
+      <div class="reg-card">
+        <div class="reg-header">
+          <span class="reg-badge">Direktiv</span>
+          <h3>NIS2</h3>
+        </div>
+        <p class="reg-plain">"Ni straffas för andras misstag." Hackarna använder era underleverantörer som bakdörr rakt in i ert system.</p>
+        <div class="reg-impacts">
+          <div class="reg-impact"><span class="impact-label tech">TECH</span><p>Ransomware via leverantör låser era servrar. Total driftstopp.</p></div>
+          <div class="reg-impact"><span class="impact-label eco">ECO</span><p>Miljonförluster i realtid + böter på 10 miljoner EUR eller 2% av global omsättning.</p></div>
+          <div class="reg-impact"><span class="impact-label legal">LEGAL</span><p><strong>VD & Styrelse bär personligt ansvar.</strong> Myndigheter kan stänga av VD från att leda bolaget.</p></div>
+          <div class="reg-impact"><span class="impact-label rep">REP</span><p>Dina största kunder häver avtalen omedelbart pga er säkerhetsrisk.</p></div>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <div class="reg-header">
+          <span class="reg-badge">Direktiv</span>
+          <h3>DORA</h3>
+        </div>
+        <p class="reg-plain">"Överlevnadstestet." Finanssektorn skiter i om ni kraschar – de vill veta om ni kan fortsätta leverera ändå.</p>
+        <div class="reg-impacts">
+          <div class="reg-impact"><span class="impact-label tech">TECH</span><p>Molnleverantören (AWS/Azure) går ner. Era system slocknar helt.</p></div>
+          <div class="reg-impact"><span class="impact-label eco">ECO</span><p>Försäkringsbolagen letar kryphål för att <strong>inte</strong> betala cyberförsäkringen pga bristande resiliens.</p></div>
+          <div class="reg-impact"><span class="impact-label legal">LEGAL</span><p>Brott mot kärnan i ert verksamhetstillstånd. Direkta sanktioner.</p></div>
+          <div class="reg-impact"><span class="impact-label rep">REP</span><p>Total förtroendekollaps. Investerare och partners drar öronen åt sig.</p></div>
+        </div>
+      </div>
+
+      <div class="reg-card">
+        <div class="reg-header">
+          <span class="reg-badge">Direktiv</span>
+          <h3>EU AI Act</h3>
+        </div>
+        <p class="reg-plain">"Shadow AI läckan." Anställda matar företagshemligheter i AI-botar som läcker till konkurrenter.</p>
+        <div class="reg-impacts">
+          <div class="reg-impact"><span class="impact-label tech">TECH</span><p>Oklassificerade AI-system fattar beslut ni saknar kontroll över. Datan lämnar bygget.</p></div>
+          <div class="reg-impact"><span class="impact-label eco">ECO</span><p>Böter upp till 35 miljoner EUR (får GDPR att se ut som felparkering).</p></div>
+          <div class="reg-impact"><span class="impact-label legal">LEGAL</span><p>Brott mot immateriella rättigheter. Stämningar från kunder vars data läckt.</p></div>
+          <div class="reg-impact"><span class="impact-label rep">REP</span><p>Bolaget svartlistas som osäkert och oetiskt av marknaden.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="advisory" style="background: var(--dark2);">
+    <div class="container">
+        <span class="section-label">Avertum Solutions</span>
+        <h2 class="section-title">Våra Operativa Moduler</h2>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Compliance Foundation</h3>
+                <span class="price">30 000 SEK</span>
+                <p style="color:var(--muted); font-size:0.9rem; margin-top:-15px; margin-bottom:20px;">Den operativa grunden för att överleva revisioner.</p>
+                <ul>
+                    <li>Moduler: NIS2 / DORA / EU AI Act</li>
+                    <li>Färdiga regelverk & policydokument</li>
+                    <li>Konkreta åtgärdsplaner per område</li>
+                    <li>4 st Live Q&A-sessioner (60 min/st)</li>
+                    <li>Avertio-plattformen (90 dagar)</li>
+                    <li>Representationsstöd mot försäkringsbolag</li>
+                </ul>
+            </div>
+
+            <div class="price-card premium">
+                <h3>Executive Assurance</h3>
+                <span class="price">60 000 SEK</span>
+                <p style="color:var(--muted); font-size:0.9rem; margin-top:-15px; margin-bottom:20px;">För styrelser som kräver absolut kontroll.</p>
+                <ul>
+                    <li><strong>Allt i Compliance Foundation</strong></li>
+                    <li>Personlig 1:1 med Leo Celija (8 timmar)</li>
+                    <li>Skräddarsydd riskmatris & roadmap</li>
+                    <li>Forensisk OSINT-genomlysning av bolaget</li>
+                    <li><strong>Aktiv LegalTech-förhandling</strong> mot försäkringsbolag vid intrång</li>
+                    <li>Direkt SLA med grundarna</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;" id="assessment">
+            <h3 style="color:#fff; font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:25px;">Är ni redo när försäkringsbolaget säger nej?</h3>
+            <a href="#" class="btn-primary" style="padding: 20px 50px;">Starta Riskbedömningen (90 sek)</a>
+        </div>
+    </div>
+  </section>
+
+</body>
+</html>
