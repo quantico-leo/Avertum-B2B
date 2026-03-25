@@ -38,212 +38,103 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none;}
-    .nav-brand img { height: 36px; border-radius: 50%; border: 1px solid var(--gold); }
-    .nav-brand span {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px; color: var(--gold); letter-spacing: 1px;
+    
+    /* LOGO GLOW EFFEKT */
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; transition: all 0.3s ease; }
+    .nav-brand img { height: 36px; border-radius: 50%; border: 1px solid var(--gold); transition: all 0.3s ease; }
+    .nav-brand span { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); letter-spacing: 1px; transition: all 0.3s ease; }
+    
+    .nav-brand:hover img {
+        box-shadow: 0 0 20px 5px rgba(201,168,76,0.6);
+        transform: scale(1.05);
+        border-color: var(--gold-light);
     }
+    .nav-brand:hover span { color: var(--gold-light); text-shadow: 0 0 10px rgba(201,168,76,0.4); }
+
     .nav-links { display: flex; gap: 32px; align-items: center; }
-    .nav-links a {
-      color: var(--muted); text-decoration: none; font-size: 13px;
-      letter-spacing: 0.5px; text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
     .nav-lang { display: flex; gap: 8px; }
-    .nav-lang a {
-      color: var(--muted); font-size: 12px; text-decoration: none;
-      padding: 4px 8px; border: 1px solid var(--border); border-radius: 3px;
-      transition: all 0.2s;
-    }
-    .nav-lang a:hover, .nav-lang a.active { color: var(--gold); border-color: var(--gold); }
-    .nav-cta {
-      background: var(--gold); color: #000 !important;
-      padding: 10px 22px !important; border-radius: 3px;
-      font-weight: 600 !important; font-size: 12px !important;
-      text-transform: uppercase !important; letter-spacing: 1px !important;
-    }
-    .nav-cta:hover { background: var(--gold-light) !important; color: #000 !important; }
+    .nav-lang a { color: var(--muted); font-size: 12px; text-decoration: none; padding: 4px 8px; border: 1px solid var(--border); border-radius: 3px; transition: all 0.2s; }
+    .nav-lang a:hover, .nav-lang a.active { color: var(--gold); border-color: var(--gold); box-shadow: 0 0 10px rgba(201,168,76,0.2); }
+    .nav-cta { background: var(--gold); color: #000 !important; padding: 10px 22px !important; border-radius: 3px; font-weight: 600 !important; font-size: 12px !important; text-transform: uppercase !important; letter-spacing: 1px !important; }
+    .nav-cta:hover { background: var(--gold-light) !important; color: #000 !important; box-shadow: 0 0 15px rgba(201,168,76,0.4); }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); }
     .hero-inner { position: relative; max-width: 860px; z-index: 10;}
-    .hero-eyebrow {
-      display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 28px;
-      padding: 6px 18px; border: 1px solid var(--border); border-radius: 2px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 5.5vw, 4rem);
-      line-height: 1.18; color: #fff; margin-bottom: 18px;
-    }
+    .hero-eyebrow { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; padding: 6px 18px; border: 1px solid var(--border); border-radius: 2px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: 1.18; color: #fff; margin-bottom: 18px; }
     .hero h1 em { font-style: normal; color: var(--gold); }
-    .hero-sub {
-      font-size: 1.15rem; color: var(--text);
-      max-width: 700px; margin: 0 auto 40px; font-weight: 300; line-height: 1.8;
-    }
-    .hero-founders {
-      display: flex; align-items: center; justify-content: center;
-      gap: 16px; margin-bottom: 48px;
-    }
-    .founder-badge {
-      display: flex; align-items: center; gap: 10px;
-      background: var(--dark3); border: 1px solid var(--border);
-      padding: 10px 18px; border-radius: 40px;
-    }
-    .founder-avatar {
-      width: 45px; height: 45px; border-radius: 50%;
-      background: var(--gold); display: flex; align-items: center;
-      justify-content: center; overflow: hidden;
-    }
+    .hero-sub { font-size: 1.15rem; color: var(--text); max-width: 700px; margin: 0 auto 40px; font-weight: 300; line-height: 1.8; }
+    .hero-founders { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 48px; }
+    .founder-badge { display: flex; align-items: center; gap: 10px; background: var(--dark3); border: 1px solid var(--border); padding: 10px 18px; border-radius: 40px; }
+    .founder-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--gold); }
     .founder-avatar img { width: 100%; height: 100%; object-fit: cover; }
     .founder-info { text-align: left; }
     .founder-name { font-size: 13px; font-weight: 600; color: #fff; }
     .founder-title { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px; }
     .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold); color: #000;
-      padding: 16px 36px; border-radius: 3px;
-      font-weight: 700; font-size: 13px; text-transform: uppercase;
-      letter-spacing: 1.5px; text-decoration: none;
-      transition: all 0.2s; display: inline-block;
-    }
+    .btn-primary { background: var(--gold); color: #000; padding: 16px 36px; border-radius: 3px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; transition: all 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 0 20px rgba(201,168,76,0.3); }
     
     /* ── THREAT BAR ── */
-    .threat-bar {
-      background: rgba(201,168,76,0.08);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 40px;
-      display: flex; gap: 40px; justify-content: center;
-      flex-wrap: wrap;
-    }
-    .threat-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 12px; text-transform: uppercase;
-      letter-spacing: 1px; color: var(--muted);
-    }
+    .threat-bar { background: rgba(201,168,76,0.08); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 40px; display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+    .threat-item { display: flex; align-items: center; gap: 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
     .threat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
 
     /* ── SECTIONS ── */
     section { padding: 100px 24px; }
     .container { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 16px; display: block; text-align: center;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif; text-align: center;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: #fff; margin-bottom: 16px; line-height: 1.25;
-    }
+    .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; text-align: center; }
+    .section-title { font-family: 'Playfair Display', serif; text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: #fff; margin-bottom: 16px; line-height: 1.25; }
     .section-sub { font-size: 1rem; color: var(--muted); max-width: 600px; margin: 0 auto; text-align: center; }
 
     /* ── CASES / PROOF OF WORK ── */
-    .cases-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px; margin-top: 50px;
-    }
-    .case-card {
-      background: var(--dark2); border-left: 3px solid var(--gold);
-      padding: 30px; border-radius: 0 4px 4px 0;
-    }
+    .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    .case-card { background: var(--dark2); border-left: 3px solid var(--gold); padding: 30px; border-radius: 0 4px 4px 0; }
     .case-card h4 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
     .case-metric { font-size: 2rem; color: var(--gold); font-weight: 700; margin-bottom: 10px; line-height: 1; }
     .case-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
     /* ── REGULATORY BREAKDOWN ── */
-    .reg-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px; margin-top: 56px;
-    }
-    .reg-card {
-      background: var(--dark2); border: 1px solid var(--border);
-      border-radius: 2px; overflow: hidden;
-      transition: border-color 0.3s;
-    }
+    .reg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 56px; }
+    .reg-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: border-color 0.3s; }
     .reg-card:hover { border-color: var(--gold); }
-    .reg-header {
-      background: rgba(201,168,76,0.08); padding: 24px 28px;
-      border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px;
-    }
-    .reg-badge {
-      background: var(--gold); color: #000; font-size: 11px; font-weight: 700; 
-      padding: 4px 10px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;
-    }
+    .reg-header { background: rgba(201,168,76,0.08); padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+    .reg-badge { background: var(--gold); color: #000; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px; }
     .reg-header h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; }
-    .reg-plain {
-      padding: 16px 28px 0; font-size: 0.95rem; color: var(--gold); font-style: italic; line-height: 1.5;
-    }
+    .reg-plain { padding: 16px 28px 0; font-size: 0.95rem; color: var(--gold); font-style: italic; line-height: 1.5; }
     .reg-impacts { padding: 20px 28px 28px; }
-    .reg-impact {
-      display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px;
-    }
+    .reg-impact { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
     .reg-impact:last-child { margin-bottom: 0; }
     
-    .impact-label {
-      font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
-      color: #fff; padding: 4px 8px; border-radius: 2px;
-      white-space: nowrap; margin-top: 2px; font-weight: 700;
-      min-width: 80px; text-align: center;
-    }
-    .impact-label.tech { background: #2A6496; }   /* Teknisk */
-    .impact-label.eco { background: #C0392B; }    /* Ekonomisk */
-    .impact-label.legal { background: #8E44AD; }  /* Legal */
-    .impact-label.rep { background: #27AE60; }    /* Rykte */
-    
+    .impact-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #fff; padding: 4px 8px; border-radius: 2px; white-space: nowrap; margin-top: 2px; font-weight: 700; min-width: 80px; text-align: center; }
+    .impact-label.tech { background: #2A6496; }
+    .impact-label.eco { background: #C0392B; }
+    .impact-label.legal { background: #8E44AD; }
+    .impact-label.rep { background: #27AE60; }
     .reg-impact p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin: 0; }
     .reg-impact strong { color: var(--text); font-weight: 600; }
 
     /* ── PRICING CARDS ── */
-    .pricing-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px; margin-top: 50px;
-    }
-    .price-card {
-        background: var(--dark2); border: 1px solid var(--border);
-        padding: 40px; position: relative; transition: all 0.3s;
-    }
-    .price-card.premium {
-        border-color: var(--gold); background: rgba(201,168,76,0.03);
-    }
-    .price-card.premium::before {
-        content: "REKOMMENDERAS FÖR LEDNINGSGRUPPER"; position: absolute; top: -12px; left: 50%;
-        transform: translateX(-50%); background: var(--gold); color: #000;
-        font-size: 0.7rem; font-weight: 700; padding: 4px 12px; letter-spacing: 1px;
-    }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+    .price-card { background: var(--dark2); border: 1px solid var(--border); padding: 40px; position: relative; transition: all 0.3s; }
+    .price-card.premium { border-color: var(--gold); background: rgba(201,168,76,0.03); }
+    .price-card.premium::before { content: "REKOMMENDERAS FÖR LEDNINGSGRUPPER"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; letter-spacing: 1px; }
     .price-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
     .price-card ul { list-style: none; margin-bottom: 30px; margin-top: 20px;}
     .price-card li { margin-bottom: 12px; color: var(--muted); padding-left: 25px; position: relative; font-size: 0.95rem; }
     .price-card li::before { content: "✓"; color: var(--gold); position: absolute; left: 0; font-weight: bold; }
 
-    @media (max-width: 768px) {
-        nav { padding: 15px 20px; }
-        .nav-links { display: none; }
-        .hero { padding-top: 140px; }
-    }
+    @media (max-width: 768px) { nav { padding: 15px 20px; } .nav-links { display: none; } .hero { padding-top: 140px; } }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="https://www.avertum.se" class="nav-brand" target="_blank">
+    <a href="https://www.avertum.se" class="nav-brand" target="_blank" title="Besök Avertum Group">
       <img src="Logo.png" alt="Avertum Logo">
       <span>AVERTUM GROUP</span>
     </a>
@@ -317,12 +208,8 @@
     <p class="section-sub">Det handlar inte längre om irrelevanta IT-policys. Det handlar om fängelse, styrelseansvar och nekade försäkringsersättningar. Här är vad direktiven egentligen betyder för er verksamhet.</p>
 
     <div class="reg-grid">
-      
       <div class="reg-card">
-        <div class="reg-header">
-          <span class="reg-badge">Direktiv</span>
-          <h3>NIS2</h3>
-        </div>
+        <div class="reg-header"><span class="reg-badge">Direktiv</span><h3>NIS2</h3></div>
         <p class="reg-plain">"Ni straffas för andras misstag." Hackarna använder era underleverantörer som en bakdörr rakt in i ert system.</p>
         <div class="reg-impacts">
           <div class="reg-impact"><span class="impact-label tech">TEKNISK</span><p>Ransomware via leverantör låser era servrar. Total driftstopp.</p></div>
@@ -333,10 +220,7 @@
       </div>
 
       <div class="reg-card">
-        <div class="reg-header">
-          <span class="reg-badge">Direktiv</span>
-          <h3>DORA</h3>
-        </div>
+        <div class="reg-header"><span class="reg-badge">Direktiv</span><h3>DORA</h3></div>
         <p class="reg-plain">"Överlevnadstestet." Finanssektorn bryr sig inte om ni kraschar – de vill veta om ni kan fortsätta leverera ändå.</p>
         <div class="reg-impacts">
           <div class="reg-impact"><span class="impact-label tech">TEKNISK</span><p>Molnleverantören (AWS/Azure) går ner. Era system slocknar helt.</p></div>
@@ -347,10 +231,7 @@
       </div>
 
       <div class="reg-card">
-        <div class="reg-header">
-          <span class="reg-badge">Direktiv</span>
-          <h3>EU AI Act</h3>
-        </div>
+        <div class="reg-header"><span class="reg-badge">Direktiv</span><h3>EU AI Act</h3></div>
         <p class="reg-plain">"Shadow AI läckan." Anställda matar in företagshemligheter i AI-botar som läcker direkt till konkurrenter.</p>
         <div class="reg-impacts">
           <div class="reg-impact"><span class="impact-label tech">TEKNISK</span><p>Oklassificerade AI-system fattar beslut ni saknar kontroll över. Datan lämnar företaget.</p></div>
@@ -359,7 +240,6 @@
           <div class="reg-impact"><span class="impact-label rep">RYKTE</span><p>Bolaget svartlistas som osäkert, ansvarslöst och oetiskt av marknaden.</p></div>
         </div>
       </div>
-
     </div>
   </section>
 
