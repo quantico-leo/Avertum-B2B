@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Avertum Group - Shield Program & Executive Assurance</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap');
+
+    body { margin: 0; padding: 0; background-color: #030a10; }
+    .av-generic-container {
+        background-color: #030a10; 
+        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px; 
+        color: #e0e0e0; font-family: 'Montserrat', sans-serif;
+        padding: 40px 20px 80px 20px; line-height: 1.6; box-sizing: border-box; min-height: 100vh; 
+    }
+    .av-generic-inner { max-width: 1100px; margin: 0 auto; }
+    
+    /* Språkväljare */
+    .av-lang-switch { text-align: right; margin-bottom: 20px; }
+    .av-lang-switch a { color: #888; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
+    .av-lang-switch a:hover { color: #C5A059; }
+    .av-lang-switch span { color: #C5A059; font-weight: 700; margin-right: 10px; }
+
+    .av-header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; flex-wrap: wrap; gap: 20px; }
+    
+    /* Premium Glow & Hover Effekt för loggan */
+    .av-logo-img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid rgba(197, 160, 89, 0.6); box-shadow: 0 0 15px rgba(197, 160, 89, 0.3); }
+    .av-glow-effect { transition: all 0.4s ease-in-out; }
+    .av-glow-effect:hover {
+        transform: scale(1.05);
+        border-color: #C5A059;
+        box-shadow: 0 0 40px rgba(197, 160, 89, 0.9), 0 0 15px rgba(197, 160, 89, 0.5) inset;
+        cursor: pointer;
+    }
+
+    .av-profile-section { display: flex; align-items: center; gap: 15px; }
+    .av-profile-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid #C5A059; }
+    .av-profile-text { text-align: left; }
+    .av-profile-text h4 { margin: 0; color: #fff; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+    .av-profile-text p { margin: 0; color: #C5A059; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+    .av-title-gold { color: #C5A059; font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: 700; text-align: center; }
+    .av-headline { font-family: 'Playfair Display', serif; font-size: 3.2rem; color: #ffffff; margin-top: 0; margin-bottom: 20px; line-height: 1.2; text-align: center; }
+    .av-headline span { color: #C5A059; font-style: italic; }
+    .av-intro-text { font-size: 1.1rem; max-width: 800px; margin: 0 auto 70px auto; color: #cccccc; text-align: center; line-height: 1.8; }
+
+    .av-problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 8px; }
+    .av-problem-col h3 { color: #C5A059; font-family: 'Playfair Display', serif; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 10px; margin-top: 0; }
+    .av-problem-col ul { list-style-type: none; padding: 0; }
+    .av-problem-col li { margin-bottom: 15px; position: relative; padding-left: 25px; color: #b0b0b0; }
+    .av-problem-col li::before { content: "⚠️"; position: absolute; left: 0; font-size: 0.9rem; }
+
+    .av-pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px; }
+    .av-price-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 160, 89, 0.2); padding: 40px; transition: transform 0.3s ease, border-color 0.3s ease; position: relative; }
+    .av-price-card.premium { border-color: #C5A059; background: rgba(197, 160, 89, 0.05); }
+    .av-price-card.premium::before { content: "REKOMMENDERAS FÖR LEDNINGSGRUPPER"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #C5A059; color: #030a10; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; letter-spacing: 1px; }
+    .av-price-card:hover { transform: translateY(-5px); }
+    .av-price-card h3 { color: #ffffff; font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-top: 0; margin-bottom: 5px; }
+    .av-price { color: #C5A059; font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; display: block; }
+    .av-price-card ul { list-style: none; padding: 0; margin-bottom: 30px; }
+    .av-price-card li { margin-bottom: 12px; color: #cccccc; padding-left: 25px; position: relative; font-size: 0.95rem; }
+    .av-price-card li::before { content: "✓"; color: #C5A059; position: absolute; left: 0; font-weight: bold; }
+
+    .av-btn-container { text-align: center; margin-top: 50px; }
+    .av-btn { background-color: #C5A059; color: #030a10; border: 2px solid #C5A059; padding: 20px 50px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: inline-block; box-shadow: 0 0 20px rgba(197, 160, 89, 0.2); }
+    .av-btn:hover { background-color: transparent; color: #C5A059; box-shadow: 0 0 30px rgba(197, 160, 89, 0.4); }
+
+    @media (max-width: 768px) { .av-headline { font-size: 2.2rem; } .av-problem-grid, .av-pricing-grid { grid-template-columns: 1fr; } .av-header-flex { justify-content: center; text-align: center; } .av-profile-section { flex-direction: column; } .av-profile-text { text-align: center; } }
+</style>
+</head>
+<body>
+
+<section class="av-generic-container">
+    <div class="av-generic-inner">
+        
+        <div class="av-lang-switch">
+            <span>🇸🇪 SV</span> | <a href="en.html">🇬🇧 EN</a>
+        </div>
+
+        <div class="av-header-flex">
+            <div class="av-logo-container">
+                <a href="https://www.avertum.se" target="_blank" title="Besök Avertum.se">
+                    <img src="Logo.png" alt="Avertum Logo" class="av-logo-img av-glow-effect"> 
+                </a>
+            </div>
+            
+            <div class="av-profile-section">
+                <img src="Leo.jpg" alt="Leo Celija" class="av-profile-img">
+                <div class="av-profile-text">
+                    <h4>Leo Celija</h4>
+                    <p>Founder, Avertum Group</p>
+                </div>
+            </div>
+        </div>
+
+        <span class="av-title-gold">Cyber Resilience & Regulatory Compliance</span>
+        <h2 class="av-headline">Din organisation är i riskzonen. <span>Vet du var?</span></h2>
+        
+        <div class="av-intro-text">
+            <p>NIS2, DORA och EU AI Act är inte längre framtida scenarier – det är här och nu. Vi säkrar din verksamhet från styrelserummet till leverantörskedjan. Innan revisionen. Innan intrånget.</p>
+        </div>
+
+        <div class="av-problem-grid">
+            <div class="av-problem-col">
+                <h3>SME / Bolagets Risker</h3>
+                <ul>
+                    <li><strong>NIS2-revision</strong> som er organisation inte är redo för.</li>
+                    <li><strong>DORA-krav</strong> som IT-avdelningen saknar resurser att tolka.</li>
+                    <li><strong>AI-agenter (Shadow AI)</strong> i leverantörskedjan utan kontroll.</li>
+                    <li><strong>Spårbarhet:</strong> Ingen vet vart pengarna tog vägen vid digital fraud.</li>
+                </ul>
+            </div>
+            <div class="av-problem-col">
+                <h3>Styrelse & Ledning</h3>
+                <ul>
+                    <li><strong>Personligt styrelseansvar</strong> vid bristande compliance & intrång.</li>
+                    <li><strong>EU AI Act:</strong> Krav på omedelbar riskklassificering av AI-system.</li>
+                    <li><strong>Försäkringsillusionen:</strong> Skydd som inte täcker skadan när den väl sker.</li>
+                    <li><strong>Representation:</strong> Att stå ensam mot försäkringsbolag vid fraud-ärenden.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="av-pricing-grid">
+            <div class="av-price-card">
+                <h3>Compliance Foundation</h3>
+                <span class="av-price">30 000 SEK</span>
+                <p style="color:#999; font-size:0.9rem; margin-top:-15px; margin-bottom:20px;">Den nödvändiga grunden för att klara granskningar.</p>
+                <ul>
+                    <li>Moduler: NIS2 / DORA / EU AI Act / Fraud Prevention</li>
+                    <li>Färdiga mallar och policydokument (revisionsklar standard)</li>
+                    <li>Åtgärdsplaner per regulatoriskt område</li>
+                    <li>4 st Live Q&A-sessioner (60 min/st)</li>
+                    <li>Tillgång till Avertio-plattformen (90 dagar)</li>
+                    <li>Representationsstöd mot försäkringsbolag vid fraud/cyber-skada</li>
+                </ul>
+            </div>
+
+            <div class="av-price-card premium">
+                <h3>Executive Assurance</h3>
+                <span class="av-price">60 000 SEK</span>
+                <p style="color:#999; font-size:0.9rem; margin-top:-15px; margin-bottom:20px;">För ledningsgrupper som kräver absolut kontroll.</p>
+                <ul>
+                    <li><strong>Allt i Compliance Foundation</strong></li>
+                    <li>Personlig 1:1-konsultation med Leo (8 timmar / 90 dagar)</li>
+                    <li>Skräddarsydd riskmatris & roadmap för er verksamhet</li>
+                    <li>Forensisk genomlysning (OSINT) av er digitala exponering</li>
+                    <li>Aktiv förhandling mot försäkringsbolag vid pågående ärende</li>
+                    <li>Prioriterad SLA direkt med Leo + uppföljning efter 90 dagar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="av-btn-container">
+            <h3 style="color:#fff; font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:25px;">Klarar ni en revision imorgon?</h3>
+            <a href="#" class="av-btn">Starta Riskbedömningen (90 sek)</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>
