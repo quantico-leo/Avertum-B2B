@@ -46,7 +46,7 @@
     
     .nav-brand:hover img {
         box-shadow: 0 0 35px 10px rgba(201,168,76,0.9), 0 0 10px rgba(201,168,76,0.5) inset;
-        transform: scale(1.1);
+        transform: scale(1.1) rotate(5deg);
         border-color: #fff;
     }
     .nav-brand:hover span { color: var(--gold-light); text-shadow: 0 0 12px rgba(201,168,76,0.5); }
@@ -75,14 +75,14 @@
     .founder-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid var(--gold); transition: all 0.3s ease;}
     .founder-avatar a { display: block; width: 100%; height: 100%; }
     .founder-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .founder-avatar:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(201,168,76,0.7); border-color: #fff; cursor: pointer; }
+    .founder-avatar:hover { transform: scale(1.15); box-shadow: 0 0 25px rgba(201,168,76,0.8); border-color: #fff; cursor: pointer; }
     
     .founder-info { text-align: left; }
     .founder-name { font-size: 13px; font-weight: 600; color: #fff; }
     .founder-title { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px; }
     .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-primary { background: var(--gold); color: #000; padding: 16px 36px; border-radius: 3px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; transition: all 0.2s; display: inline-block; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 0 20px rgba(201,168,76,0.3); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 0 25px rgba(201,168,76,0.4); }
     
     /* ── THREAT BAR ── */
     .threat-bar { background: rgba(201,168,76,0.08); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 20px 40px; display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
@@ -98,15 +98,16 @@
 
     /* ── CASES / PROOF OF WORK ── */
     .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-    .case-card { background: var(--dark2); border-left: 3px solid var(--gold); padding: 30px; border-radius: 0 4px 4px 0; }
+    .case-card { background: var(--dark2); border-left: 3px solid var(--gold); padding: 30px; border-radius: 0 4px 4px 0; transition: transform 0.3s ease; }
+    .case-card:hover { transform: translateX(10px); background: var(--dark3); }
     .case-card h4 { color: #fff; font-size: 1.1rem; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
     .case-metric { font-size: 2rem; color: var(--gold); font-weight: 700; margin-bottom: 10px; line-height: 1; }
     .case-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
     /* ── REGULATORY BREAKDOWN ── */
     .reg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 56px; }
-    .reg-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: border-color 0.3s; }
-    .reg-card:hover { border-color: var(--gold); }
+    .reg-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; transition: all 0.3s; }
+    .reg-card:hover { border-color: var(--gold); transform: translateY(-5px); }
     .reg-header { background: rgba(201,168,76,0.08); padding: 24px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
     .reg-badge { background: var(--gold); color: #000; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px; }
     .reg-header h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; }
@@ -132,6 +133,47 @@
     .price-card ul { list-style: none; margin-bottom: 30px; margin-top: 20px;}
     .price-card li { margin-bottom: 12px; color: var(--muted); padding-left: 25px; position: relative; font-size: 0.95rem; }
     .price-card li::before { content: "✓"; color: var(--gold); position: absolute; left: 0; font-weight: bold; }
+
+    /* ── FOOTER CONTACT ── */
+    .footer-contact {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        border-top: 1px solid var(--border);
+        padding-top: 30px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+    .contact-link svg {
+        transition: transform 0.3s ease;
+    }
+    .contact-link:hover {
+        color: var(--gold);
+    }
+    .contact-link:hover svg {
+        transform: scale(1.15);
+    }
+    .contact-divider {
+        color: var(--border);
+    }
+    
+    @media (max-width: 600px) {
+        .footer-contact { flex-direction: column; gap: 15px; }
+        .contact-divider { display: none; }
+    }
 
     @media (max-width: 768px) { nav { padding: 15px 20px; } .nav-links { display: none; } .hero { padding-top: 140px; } }
   </style>
@@ -286,6 +328,25 @@
         <div style="text-align: center; margin-top: 60px;">
             <h3 style="color:#fff; font-family:'Playfair Display', serif; font-size:1.5rem; margin-bottom:25px;">Are you ready when the insurance company says no?</h3>
             <a href="TALLY-LÄNK-HÄR" target="_blank" class="btn-primary" style="padding: 20px 50px;">COMPLIMENTARY RISK ASSESSMENT</a>
+            
+            <div class="footer-contact">
+                <a href="mailto:info@avertum.se" class="contact-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    info@avertum.se
+                </a>
+                
+                <span class="contact-divider">|</span>
+                
+                <a href="https://wa.me/46700193462" target="_blank" class="contact-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                    +46 700 19 34 62
+                </a>
+            </div>
         </div>
     </div>
   </section>
